@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static java.lang.Integer.parseInt;
+
 public class HomeScreen extends AppCompatActivity {
 
     TextView tag_to_search;
@@ -23,6 +25,7 @@ public class HomeScreen extends AppCompatActivity {
     public void methodSearch(View view){
         Intent intent = new Intent(HomeScreen.this,ResultActivity.class);
         intent.putExtra("Tag",tag_to_search.getText().toString());
+        intent.putExtra("numberoftags",parseInt(number_of_tags.getText().toString()));
         startActivity(intent);
     }
 }
